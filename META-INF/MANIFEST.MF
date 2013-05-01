@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: RoboBinding Validator
+Bundle-SymbolicName: robobinding-eclipse-validator;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.robobinding.plugins.validator.eclipse.Activator
+Bundle-Vendor: Robert Taylor
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jem.util,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/robobinding-validator-0.8.4-SNAPSHOT.jar,
+ .

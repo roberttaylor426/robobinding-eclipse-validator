@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension id="robobindingValidationNature" name="RoboBinding validation nature"
+		point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="org.robobinding.validator.eclipse.Nature">
+			</run>
+		</runtime>
+		<builder id="robobindingValidator">
+		</builder>
+	</extension>
+	<extension id="robobindingValidator" name="RoboBinding validator"
+		point="org.eclipse.core.resources.builders">
+		<builder hasNature="true">
+			<run class="org.robobinding.plugins.validator.eclipse.Validator">
+			</run>
+		</builder>
+	</extension>
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution adaptable="true"
+			id="robobindingValidator.contribution1" nameFilter="*"
+			objectClass="org.eclipse.core.resources.IProject">
+			<action class="org.robobinding.validator.eclipse.ToggleNatureAction"
+				enablesFor="+" id="robobinding.addRemoveNatureAction" label="Add/Remove Sample Nature"
+				menubarPath="additions">
+			</action>
+		</objectContribution>
+	</extension>
+	<extension id="robobindingValidationProblem" name="Binding validation problem"
+		point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.core.resources.problemmarker">
+		</super>
+		<persistent value="true">
+		</persistent>
+	</extension>
+</plugin>
